@@ -1,18 +1,19 @@
 import axios from "axios";
-export default class CategoriaApi {
-  async buscarTodasAsCategorias(page, search = "") {
-    const { data } = await axios.get(`/categorias/?page=${page}&search=${search}`);
+export default class EditorasApi {
+  async buscarTodosAsEditoras() {
+    const { data } = await axios.get("/editoras/");
     return data;
   }
-  async adicionarCategoria(categoria) {
-    const { data } = await axios.post("/categorias/", categoria);
+  async adicionarEditora(editora) {
+    const { data } = await axios.post("/editoras/", editora);
     return data;
   }
-  async atualizarCategoria(categoria) {
-    const { data } = await axios.put(`/categorias/${categoria.id}/`, categoria);
-    return data.results;
+  async atualizarEditora(editora) {
+    const { data } = await axios.put(`/editora/${editora.id}/`, editora);
+    return data;
   }
-  async excluirCategoria(id) {
-    await axios.delete(`/categorias/${id}/`);
+  async excluirEditora(id) {
+    const { data } = await axios.delete(`/editora/${id}/`);
+    return data;
   }
 }
