@@ -71,7 +71,7 @@ const filterItems = (event) => {
 
 const selectedItemIndex = ref(-1); // Novo estado para rastrear o item selecionado
 
-
+  
 const openSearch = () => {
   searching.value = true
   document.getElementById("autocomplete-list").focus();
